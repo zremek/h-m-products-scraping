@@ -1,0 +1,87 @@
+{
+    "_id": "h_and_m_view_all",
+    "startUrl": [
+        "https://www2.hm.com/pl_pl/ona/produkty/view-all.html?sort=stock&image-size=small&image=model&offset=0&page-size=36"
+    ],
+    "selectors": [
+        {
+            "id": "listing",
+            "type": "SelectorElementClick",
+            "parentSelectors": [
+                "_root"
+            ],
+            "selector": "div.item-details",
+            "multiple": true,
+            "delay": "2000",
+            "clickElementSelector": "button.js-load-more",
+            "clickType": "clickMore",
+            "discardInitialElements": "do-not-discard",
+            "clickElementUniquenessType": "uniqueHTMLText"
+        },
+        {
+            "id": "link",
+            "type": "SelectorLink",
+            "parentSelectors": [
+                "listing"
+            ],
+            "selector": "a.link",
+            "multiple": false,
+            "delay": 0
+        },
+        {
+            "id": "name",
+            "type": "SelectorText",
+            "parentSelectors": [
+                "link"
+            ],
+            "selector": "h1.primary",
+            "multiple": false,
+            "regex": "",
+            "delay": 0
+        },
+        {
+            "id": "price",
+            "type": "SelectorText",
+            "parentSelectors": [
+                "link"
+            ],
+            "selector": "span.Price-module--black-normal__Bh4GY",
+            "multiple": false,
+            "regex": "",
+            "delay": 0
+        },
+        {
+            "id": "description",
+            "type": "SelectorText",
+            "parentSelectors": [
+                "link"
+            ],
+            "selector": "div.pdp-text",
+            "multiple": false,
+            "regex": "",
+            "delay": 0
+        },
+        {
+            "id": "review_count",
+            "type": "SelectorText",
+            "parentSelectors": [
+                "link"
+            ],
+            "selector": "span.reviews-number",
+            "multiple": false,
+            "regex": "\\(.*?\\)",
+            "delay": 0
+        },
+        {
+            "id": "details",
+            "type": "SelectorText",
+            "parentSelectors": [
+                "link"
+            ],
+            "selector": "div.product-details-details",
+            "multiple": false,
+            "regex": "",
+            "delay": 0
+        }
+    ]
+}
